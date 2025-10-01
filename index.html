@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello World test for WhatsApp in-app browsing">
+    <title>WhatsApp In-App Browsing Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .whatsapp-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .success-message {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .timestamp {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="whatsapp-icon">📱</div>
+        <h1>Hello World from WhatsApp!</h1>
+        <p>🎉 Congratulations! You've successfully opened a web page inside WhatsApp's in-app browser.</p>
+        
+        <div class="success-message">
+            <h3>✅ Test Successful!</h3>
+            <p>This page is being displayed within WhatsApp's integrated browsing experience.</p>
+        </div>
+        
+        <div class="timestamp">
+            <p>Page loaded at: <span id="timestamp"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Display current timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+        
+        // Simple interaction test
+        console.log('WhatsApp in-app browser test loaded successfully!');
+        
+        // Test if we're in WhatsApp context (basic detection)
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isWhatsApp = userAgent.includes('whatsapp');
+        
+        if (isWhatsApp) {
+            console.log('Detected WhatsApp browser context');
+        }
+    </script>
+</body>
+</html>
